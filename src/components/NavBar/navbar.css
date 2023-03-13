@@ -1,0 +1,13 @@
+
+.style-navbar{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+}
+.style-logo{
+    height: 100px;
+    border-radius: 50px;
+}
+.style-cart{
+    margin-top: 25px;
+}
