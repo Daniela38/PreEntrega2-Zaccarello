@@ -1,10 +1,11 @@
 import CartWidget from "../CartWidget";
 import "./navbar.css";
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <div className="style-navbar">
-      <img src="/imgs/logo.png" className="style-logo" alt="Logo" />
+      <Link to="/"><img src="/imgs/logo.png" className="style-logo" alt="Logo" /></Link>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand"></a>
@@ -24,39 +25,14 @@ function NavBar() {
             id="navbarNavAltMarkup"
           >
             <div className="navbar-nav">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="index.html"
-              >
-                Sobre mi
-              </a>
-              <a
-                className="nav-link"
-                href="pages/plan-alimentacion.html"
-              >
-                Plan de alimentación
-              </a>
-              <a
-                className="nav-link"
-                href="pages/consultas-presenciales.html"
-              >
-                Consultas presenciales
-              </a>
-              <a
-                className="nav-link"
-                href="pages/consultas-virtuales.html"
-              >
-                Consultas virtuales
-              </a>
-              <a className="nav-link" href="pages/contacto.html">
-                Contacto
-              </a>
+              <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
+              <Link to="/category/América" className="nav-link">América</Link>
+              <Link to="/category/Europa" className="nav-link">Europa</Link>
+              <Link to="/cart" className="nav-link"><CartWidget/></Link>
             </div>
           </div>
         </div>
       </nav>
-      <CartWidget/>
     </div>
   );
 }
