@@ -3,7 +3,7 @@ import Item from './Item/Item';
 
 export default function ItemList(props) {
   return (
-    <div>
+    <div className='row'>
     {props.products.map((producto) => (
         <Item
             key={producto.id}
@@ -12,6 +12,7 @@ export default function ItemList(props) {
             title={producto.title}
             price={producto.price}
             category={producto.category}
+            stock={producto.stock}
         />
     ))}
     </div>

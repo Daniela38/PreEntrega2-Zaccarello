@@ -1,3 +1,7 @@
-.card{
-    width: 20%;
+.card {
+    height: 200px;
+    text-align: center;
+}
+.disabled{
+    filter: grayscale(0.9);
 }

@@ -1,8 +1,12 @@
 import CartWidget from "../CartWidget";
 import "./navbar.css";
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
+import CartContainer from "../CartContainer/CartContainer";
 
 function NavBar() {
+  const {cart} = useContext(cartContext);
   return (
     <div className="style-navbar">
       <Link to="/"><img src="/imgs/logo.png" className="style-logo" alt="Logo" /></Link>
@@ -26,9 +30,10 @@ function NavBar() {
           >
             <div className="navbar-nav">
               <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
-              <Link to="/category/América" className="nav-link">América</Link>
-              <Link to="/category/Europa" className="nav-link">Europa</Link>
+              <Link to="/category/América" className="nav-link">Vuelos por América</Link>
+              <Link to="/category/Europa" className="nav-link">Vuelos hacia Europa</Link>
               <Link to="/cart" className="nav-link"><CartWidget/></Link>
+              <span>{cart.length}</span>
             </div>
           </div>
         </div>

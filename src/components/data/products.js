@@ -5,7 +5,7 @@ const products = [
         title: "Estados Unidos",
         category: "América",
         price: 800,
-        description: "lorem",
+        description: "Conzoca la íncreible Gran Manzana, diviértase en los parques de Disney World o disfrute de las magníficas playas de Maimi.",
         stock: 15
     },
     {
@@ -14,7 +14,7 @@ const products = [
         title: "México",
         category: "América",
         price: 900,
-        description: "lorem",
+        description: "Maravilloso país con playas paradisíacas, comida deliciosa e impresionantes sitios arqueológicos.",
         stock: 18
     },
     {
@@ -23,7 +23,7 @@ const products = [
         title: "República Dominicana",
         category: "América",
         price: 600,
-        description: "lorem",
+        description: "Rélajese y disfrute de la buena gastronomía en estas alucinantes playas paradisíacas.",
         stock: 20
     },
     {

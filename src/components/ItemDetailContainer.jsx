@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import products from './data/products';
 import ItemDetail from './ItemDetail';
+import ItemCount from './ItemCount/ItemCount';
+import { useContext } from 'react';
+import { cartContext } from '../context/cartContext';
+import {getSingleItem} from "../services/firestore";
 
-function getSingleItem(idURL){
+function getSingleItem_(idURL){
     const promesa = new Promise((resolve, reject) => {
         setTimeout(() => {
             const itemRequested = products.find( item => {
@@ -18,13 +22,26 @@ function getSingleItem(idURL){
 export default function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
     let {id} = useParams();
+    const { addItem, getCountInCart } = useContext(cartContext);
 
     useEffect(() => {
-        getSingleItem(id).then((respuesta) => {
+        getSingleItem_(id).then((respuesta) => {
             setProduct(respuesta);
         });
-    }, [])
+    }, [id])
+
+    function handleAddToCart(count){
+        addItem(product, count);
+        console.log("Agregado al carrio!");
+    }
+
+    /*const countInCart = getCountInCart(product.id);
+    console.log(countInCart);*/
+
     return (
-        <ItemDetail products={product}/>
+        <div>
+            <ItemDetail products={product}/>
+            <ItemCount onAddToCart={handleAddToCart}/>
+        </div>
     )
 }
