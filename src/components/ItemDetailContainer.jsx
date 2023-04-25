@@ -35,13 +35,15 @@ export default function ItemDetailContainer() {
         console.log("Agregado al carrio!");
     }
 
-    /*const countInCart = getCountInCart(product.id);
-    console.log(countInCart);*/
+    const countInCart = getCountInCart(product.id);
 
     return (
         <div>
             <ItemDetail products={product}/>
-            <ItemCount onAddToCart={handleAddToCart}/>
+            <ItemCount
+                stock={product.stock - countInCart} 
+                onAddToCart={handleAddToCart}
+            />
         </div>
     )
 }

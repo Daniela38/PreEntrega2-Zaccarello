@@ -32,7 +32,14 @@ export default function CartContainer() {
     <div>
         <h1>Carrito de compras</h1>
         {cart.map((item) => (
-            <h3>{item.title}</h3>
+          <>
+            <h6>{item.title}</h6>
+            <h6>{item.price}</h6>
+            <h6>{item.count}</h6>
+            <Button onPress={item.removeItem}>
+              Borrar
+            </Button>
+          </>
         ))}
         {/*<Button onPress={handleCheckout}>Finalizar compra</Button>*/}
         <FormCheckout onCheckout={handleCheckout}/>

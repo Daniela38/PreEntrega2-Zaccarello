@@ -1,4 +1,3 @@
-import CartContainer from "./CartContainer/CartContainer";
 import "./NavBar/navbar.css";
 
 function CartWidget() {
