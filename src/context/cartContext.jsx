@@ -18,6 +18,9 @@ function CartProvider(props){
             newCart.push({...product, count: countFromCounter});
         }
         setCart(newCart);
+        if(newCart.length > 0){
+            
+        }
     }
 
     function isItemInCart(id){
