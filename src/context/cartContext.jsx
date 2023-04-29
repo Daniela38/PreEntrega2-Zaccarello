@@ -18,9 +18,6 @@ function CartProvider(props){
             newCart.push({...product, count: countFromCounter});
         }
         setCart(newCart);
-        if(newCart.length > 0){
-            
-        }
     }
 
     function isItemInCart(id){
@@ -38,13 +35,19 @@ function CartProvider(props){
         return 1900;
     }
 
-    function removeItem(id){
-        setCart(cart.filter(item => item.id !== id))
+    function removeItem(id){ 
+         return setCart(cart.filter(item => item.id !== id))
+        //return setCart(cartFilter)
+        //console.log(cartFilter);
+    }
+
+    function clearCart(){
+        setCart([])
     }
 
     return(
         <Provider
-            value={{cart: cart, addItem, isItemInCart, getCountInCart, getTotalPrice, removeItem}}
+            value={{cart: cart, addItem, isItemInCart, getCountInCart, getTotalPrice, removeItem, clearCart}}
         >
             {props.children}
         </Provider>

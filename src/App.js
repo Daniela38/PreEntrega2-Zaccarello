@@ -9,8 +9,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Item from './components/Item/Item';
 import CartWidget from './components/CartWidget';
 import { CartProvider } from './context/cartContext';
-import CartContainer from './components/CartContainer/CartContainer';
 import Checkout from './components/Checkout';
+import CartContainer from './components/CartContainer/CartContainer';
 //import { exportData } from './services/firestore';
 
 /*import { initializeApp } from "firebase/app";

@@ -1,8 +1,9 @@
 import CartWidget from "../CartWidget";
 import "./navbar.css";
 import { Link } from 'react-router-dom';
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
+import CartContainer from "../CartContainer/CartContainer";
 
 function NavBar() {
   const {cart} = useContext(cartContext);
